@@ -24,6 +24,7 @@ sudo apt update
 sudo apt install docker.io docker-compose -y
 sudo systemctl enable --now docker
 ```
+---
 
 ### **Windows / MacOS**
 
