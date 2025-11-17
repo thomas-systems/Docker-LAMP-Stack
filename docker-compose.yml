@@ -1,0 +1,37 @@
+version: "1.0"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: lemp-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./public:/var/www/html
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - php
+    restart: unless-stopped
+
+  php:
+    image: php:8.2-fpm
+    container_name: lemp-php
+    volumes:
+      - ./public:/var/www/html
+    restart: unless-stopped
+
+  db:
+    image: mariadb:11
+    container_name: lemp-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: YourRootPassword # MAKE SURE TO CHANGE THIS!
+      MYSQL_DATABASE: YourDatabase # MAKE SURE TO CHANGE THIS!
+      MYSQL_USER: YourUser # MAKE SURE TO CHANGE THIS!
+      MYSQL_PASSWORD: YourPassword # MAKE SURE TO CHANGE THIS!
+    volumes:
+      - ./data/db:/var/lib/mysql
+    ports:
+      - "3306:3306"
