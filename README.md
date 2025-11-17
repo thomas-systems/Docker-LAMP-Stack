@@ -8,16 +8,7 @@
 
 ---
 
-## 📁 Folder Structure
-
-├── docker-compose.yml
-├── public/
-│ └── index.php <-- Add your PHP files in this directory
-├── nginx/
-│ └── conf.d/
-│ └── default.conf <-- Change Nginx config here.
-└── database/
-└── appdb.sql <-- add your database file here
+## DB Configuration
 
 ✔️ Put your SQL dump inside `/database`  
 ✔️ Name it: **appdb.sql**  
