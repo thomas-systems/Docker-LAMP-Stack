@@ -1,4 +1,4 @@
-# 📦 LEMP Stack (Linux + Nginx + MariaDB + PHP-FPM)
+# 🐳 Docker LEMP Stack (Linux + Nginx + MariaDB + PHP-FPM)
 
 - **Nginx** – Web server  
 - **PHP 8.2 FPM** – PHP runtime  
